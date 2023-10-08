@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dk-basichud</title>
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Rajdhani' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+</head>
+
+<div id="app" v-if="ui">
+
+    <div ref="notificationDiv" class="notification" v-for="eyes in notification">
+        <svg width="34.125rem" height="12.5rem" viewBox="0 0 546 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <foreignObject x="0" y="50" width="546" height="70">
+                <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: center; justify-content: center; overflow: hidden; text-align: center;">
+                    <span style="font-family: 'Ubuntu', sans-serif; font-size: 1rem; color: #FEFEFE; bottom:1rem;" v-html="eyes.text"></span>
+                </div>
+            </foreignObject>
+            
+            <g filter="url(#filter0_d_3106_13694)">
+                <text fill="#F2C94C" text-anchor="middle" xml:space="preserve" style="white-space: pre" font-family="Ubuntu" font-size="24" font-weight="bold" letter-spacing="0.02em"><tspan x="273.731" y="38.916">{{ eyes.header }}</tspan></text>
+            </g>
+            
+            <g filter="url(#filter1_d_3106_13694)">
+                <rect width="142" height="2" transform="matrix(1 0 0 -1 25 31)" fill="#F2C94C"/>
+            </g>
+            <g filter="url(#filter2_d_3106_13694)">
+                <rect width="142" height="2" transform="matrix(1 0 0 -1 379 31)" fill="#F2C94C"/>
+            </g>
+
+            <defs>
+            <filter id="filter0_d_3106_13694" x="161.65" y="0.984375" width="222.701" height="67.3516" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12.5"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.94902 0 0 0 0 0.788235 0 0 0 0 0.298039 0 0 0 0.15 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3106_13694"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3106_13694" result="shape"/>
+            </filter>
+            <filter id="filter1_d_3106_13694" x="0" y="8" width="192" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12.5"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.94902 0 0 0 0 0.788235 0 0 0 0 0.298039 0 0 0 0.15 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3106_13694"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3106_13694" result="shape"/>
+            </filter>
+            <filter id="filter2_d_3106_13694" x="354" y="8" width="192" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="12.5"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.94902 0 0 0 0 0.788235 0 0 0 0 0.298039 0 0 0 0.15 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3106_13694"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3106_13694" result="shape"/>
+            </filter>
+            </defs>
+        </svg>
+    </div>
+
+   
+
+    <div class="status" ref="animate">
+        <div class="location" style="position:absolute; top:-3.3rem; left:-11rem">
+            <svg width="30.4375rem" height="2.1875rem" viewBox="0 0 151 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text ref="text1" fill="white" xml:space="preserve" style="white-space: pre" font-family="Open Sans" font-size="18" font-weight="600" letter-spacing="0em"><tspan x="31" y="15.9829">{{ location.StreetName2 }}</tspan></text>
+                <text height="2.5rem" ref="text2" opacity="0.5" fill="white" xml:space="preserve" style="white-space: pre" font-family="Open Sans" font-size="14" font-weight="600" letter-spacing="0em"><tspan x="31.1113" y="33.4312">{{ location.StreetName1 }}</tspan></text>
+                <path d="M12 8C6.486 8 2 12.486 2 18C2 23.514 6.486 28 12 28C17.514 28 22 23.514 22 18C22 12.486 17.514 8 12 8ZM12 26C7.589 26 4 22.411 4 18C4 13.589 7.589 10 12 10C16.411 10 20 13.589 20 18C20 22.411 16.411 26 12 26Z" fill="#F8F8F8"/>
+                <path d="M8 22L13.991 20L16 14L10 16L8 22Z" fill="#F8F8F8"/>
+            </svg>
+        </div>
+        <svg width="13.75rem" height="2.5rem" viewBox="0 0 220 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19.5" fill="black" fill-opacity="0.2" stroke="#F78601"/>
+            <mask id="mask0_4251_9630" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+            <circle cx="20" cy="20" r="20" fill="black"/>
+            </mask>
+            <g mask="url(#mask0_4251_9630)">
+                <path 
+                    :transform="`translate(0, ${hungerTransformValue})`" 
+                    d="M-6.03693 11.2948C-7.68418 10.8861 -9.4298 10.8353 -11.1798 11.0289C-20.3862 12.0473 -24.1836 22.3813 -22.8792 31.5515C-21.1288 43.8567 -10.593 53 1.83611 53H38.3026C66.0434 53 113.722 3.60186 86.1925 7.01726C77.573 8.08663 75.849 14.5028 63.7816 13.4335C51.7142 12.3641 49.9903 11.2948 40.5088 9.15602C31.0272 7.01727 25.8555 10.2254 16.374 12.3641C6.89243 14.5029 2.58265 13.4335 -6.03693 11.2948Z" 
+                    fill="#F78601">
+                    <animateTransform
+                        attributeName="transform"
+                        type="translate"
+                        :from="`0, ${hungerTransformValue + 15}`"
+                        :values="`0, ${hungerTransformValue + 15}; 0, ${hungerTransformValue + 10}; 0, ${hungerTransformValue}`"
+                        keyTimes="0; 0.5; 1"
+                        keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                        begin="indefinite"
+                        dur="1.5s" 
+                        fill="freeze"
+                        ref="animationRef"
+                    />
+                </path>
+            </g>
+            
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6277 12.7838C13.1127 14.1229 13.188 15.4256 13.8335 16.3444C13.9651 16.5316 19.1253 21.7197 19.18 21.7197C19.1953 21.7197 19.3473 21.5809 19.5177 21.4112C19.9023 21.0282 19.5293 20.7099 22.2266 23.7215C24.717 26.5021 24.6429 26.4238 24.8974 26.5432C25.8697 26.9991 26.9049 26.1209 26.618 25.0836C26.5317 24.7714 26.6817 24.9266 20.3347 18.5842L14.2461 12.5H13.9915H13.7369L13.6277 12.7838ZM22.158 14.0712C21.3261 14.9049 20.6048 15.6472 20.5551 15.7207C20.3513 16.022 20.2482 16.305 20.18 16.7499C20.1566 16.9022 20.1306 17.0642 20.1222 17.1098C20.1078 17.1883 20.1591 17.245 21.0492 18.1323L21.9916 19.0716L22.0974 19.0403C22.1556 19.0231 22.3155 18.9954 22.4527 18.9787C22.7437 18.9433 23.0939 18.83 23.3195 18.6984C23.4806 18.6045 26.6256 15.5132 26.6256 15.4489C26.6256 15.4038 26.1167 14.9087 26.0704 14.9087C26.0477 14.9087 25.5427 15.3946 24.9481 15.9885C23.7095 17.2257 23.8552 17.1413 23.5266 16.8117C23.1985 16.4827 23.1123 16.6309 24.352 15.3933C24.9467 14.7995 25.4333 14.2948 25.4333 14.2715C25.4333 14.2257 24.9368 13.7182 24.892 13.7182C24.877 13.7182 24.372 14.2103 23.7697 14.8118C23.1675 15.4133 22.662 15.9055 22.6464 15.9055C22.6017 15.9055 22.1062 15.397 22.1062 15.3511C22.1062 15.3284 22.5928 14.8242 23.1875 14.2304C23.7822 13.6367 24.2688 13.1319 24.2688 13.1087C24.2688 13.0538 23.7678 12.5554 23.7127 12.5554C23.6896 12.5554 22.9899 13.2375 22.158 14.0712ZM14.7529 22.6541C12.8915 24.5147 12.7028 24.7116 12.6274 24.8717C12.1065 25.9781 13.2822 27.0769 14.3602 26.4913C14.517 26.4061 18.5572 22.3996 18.5572 22.3292C18.5572 22.2743 16.8926 20.6122 16.8375 20.6122C16.8145 20.6122 15.8764 21.5311 14.7529 22.6541Z" fill="white"/>
+            <circle cx="80" cy="20" r="19.5" fill="black" fill-opacity="0.2" stroke="#2D8FDF"/>
+            <mask id="mask1_4251_9630" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="60" y="0" width="40" height="40">
+            <circle cx="80" cy="20" r="20" fill="black"/>
+            </mask>
+            <g mask="url(#mask1_4251_9630)">
+                <path 
+                    :transform="`translate(0, ${waterTransformValue})`" 
+                    d="M53.9631 21.2948C52.3158 20.8861 50.5702 20.8353 48.8202 21.0289C39.6138 22.0473 35.8164 32.3813 37.1208 41.5515C38.8712 53.8567 49.407 63 61.8361 63H98.3026C126.043 63 173.722 13.6019 146.193 17.0173C137.573 18.0866 135.849 24.5028 123.782 23.4335C111.714 22.3641 109.99 21.2948 100.509 19.156C91.0272 17.0173 85.8555 20.2254 76.374 22.3641C66.8924 24.5029 62.5826 23.4335 53.9631 21.2948Z" 
+                    fill="#2D8FDF">
+                    <animateTransform
+                        attributeName="transform"
+                        type="translate"
+                        :from="`0, ${waterTransformValue + 15}`"
+                        :values="`0, ${waterTransformValue + 15}; 0, ${waterTransformValue + 10}; 0, ${waterTransformValue}`"
+                        keyTimes="0; 0.5; 1"
+                        keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                        begin="indefinite"
+                        dur="1.5s" 
+                        fill="freeze"
+                        ref="animationRef"
+                    />
+                </path>
+            </g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M75.2264 12.0654C75.1551 12.1103 75.1031 12.1746 75.0612 12.2698L75 12.4087L75.6289 19.5071C76.3278 27.3942 76.26 26.7993 76.4751 26.9346L76.5791 27H80H83.4209L83.5249 26.9346C83.74 26.7993 83.6722 27.3942 84.3711 19.5071L85 12.4087L84.9388 12.2698C84.8969 12.1746 84.8449 12.1103 84.7736 12.0654L84.6695 12H80H75.3305L75.2264 12.0654ZM84.0981 12.9675C84.1212 13.0097 83.7956 16.6926 83.7647 16.7382C83.7144 16.8125 83.0971 16.9804 82.6665 17.0371C81.7214 17.1614 80.9915 16.9377 80.2111 16.2847C79.1271 15.3775 77.8194 15.1476 76.3462 15.605C76.2343 15.6398 76.1559 15.6508 76.1409 15.6339C76.1122 15.6016 75.8799 13.0373 75.9002 12.9776C75.9181 12.9251 84.0693 12.9151 84.0981 12.9675Z" fill="white"/>
+            <circle cx="140" cy="20" r="19.5" fill="black" fill-opacity="0.2" stroke="#CA2626"/>
+
+            <mask id="mask2_4251_9630" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="120" y="0" width="2.5rem" height="2.5rem">
+            <circle cx="140" cy="20" r="20" fill="black"/>
+            </mask>
+            <g mask="url(#mask2_4251_9630)">
+                <path 
+                :transform="`translate(0, ${healthTransformValue})`" 
+                d="M113.963 6.29478C112.316 5.88606 110.57 5.83533 108.82 6.02891C99.6138 7.04727 95.8164 17.3813 97.1208 26.5515C98.8712 38.8567 109.407 48 121.836 48H158.303C186.043 48 233.722 -1.39814 206.193 2.01726C197.573 3.08663 195.849 9.50282 183.782 8.43346C171.714 7.36409 169.99 6.29478 160.509 4.15602C151.027 2.01727 145.856 5.22539 136.374 7.36412C126.892 9.50285 122.583 8.43351 113.963 6.29478Z" 
+                fill="#CA2626">
+                  <animateTransform 
+                    attributeName="transform"
+                    type="translate"
+                    :from="`0, ${healthTransformValue + 15}`"
+                    :values="`0, ${healthTransformValue + 15}; 0, ${healthTransformValue + 10}; 0, ${healthTransformValue}`"
+                    keyTimes="0; 0.5; 1"
+                    keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                    begin="indefinite"
+                    dur="1.5s" 
+                    fill="freeze"
+                    ref="animationRef"
+                  />
+              </path>
+            </g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M136.326 14.0162C135.068 14.2075 134.041 14.9689 133.442 16.1565C133.273 16.49 133.16 16.8197 133.074 17.226C133.011 17.5232 133.001 17.6342 133 18.0704C132.999 18.4932 133.009 18.6176 133.061 18.8576C133.238 19.6711 133.646 20.5004 134.28 21.3357C134.911 22.1687 135.954 23.1974 137.025 24.0453C137.792 24.6528 138.933 25.4474 139.591 25.8326C139.964 26.0515 140.029 26.0531 140.369 25.8528C141.881 24.9625 143.744 23.4982 144.815 22.3595C146.056 21.0391 146.711 19.9325 146.95 18.7508C147.022 18.3938 147.015 17.6611 146.935 17.2626C146.682 15.9991 145.927 14.9519 144.879 14.4107C144.548 14.2395 144.385 14.1772 144.039 14.0897C143.668 13.9956 143.012 13.9712 142.628 14.0372C142.186 14.1135 141.65 14.3149 141.302 14.5361C140.876 14.8061 140.417 15.245 140.157 15.6298C140.077 15.7478 140.006 15.8443 139.998 15.8443C139.99 15.8443 139.916 15.7435 139.833 15.6204C139.637 15.3267 139.12 14.8156 138.82 14.6186C138.366 14.3211 137.881 14.1263 137.378 14.0393C137.162 14.002 136.513 13.9878 136.326 14.0162Z" fill="white"/>
+            <circle cx="200" cy="20" r="19.5" fill="black" fill-opacity="0.2" stroke="#A6A6A6"/>
+
+            <mask id="mask3_4251_9630" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="180" y="0" width="40" height="40">
+            <circle cx="200" cy="20" r="20" fill="black"/>
+            </mask>
+            <g mask="url(#mask3_4251_9630)">
+                <path 
+                :transform="`translate(0, ${armorTransformValue})`" 
+                d="M173.963 21.2948C172.316 20.8861 170.57 20.8353 168.82 21.0289C159.614 22.0473 155.816 32.3813 157.121 41.5515C158.871 53.8567 169.407 63 181.836 63H218.303C246.043 63 293.722 13.6019 266.193 17.0173C257.573 18.0866 255.849 24.5028 243.782 23.4335C231.714 22.3641 229.99 21.2948 220.509 19.156C211.027 17.0173 205.856 20.2254 196.374 22.3641C186.892 24.5029 182.583 23.4335 173.963 21.2948Z" 
+                fill="#A6A6A6">
+                  <animateTransform 
+                    attributeName="transform"
+                    type="translate"
+                    :from="`0, ${armorTransformValue + 15}`"
+                    :values="`0, ${armorTransformValue + 15}; 0, ${armorTransformValue + 10}; 0, ${armorTransformValue}`"
+                    keyTimes="0; 0.5; 1"
+                    keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"
+                    begin="indefinite"
+                    dur="1.5s" 
+                    fill="freeze"
+                    ref="animationRef"
+                  />
+              </path>
+            </g>
+            <path d="M204.373 16.0594L205.29 14.015C205.564 13.4049 205.284 12.691 204.666 12.4226C204.051 12.1556 203.334 12.4304 203.062 13.0373L202.453 14.3943C202.164 15.0391 201.517 15.4549 200.804 15.4549H199.196C198.482 15.4549 197.836 15.0392 197.547 14.3943L196.938 13.0373C196.666 12.4304 195.948 12.1556 195.334 12.4226C194.716 12.691 194.436 13.4049 194.71 14.015L195.627 16.0594C196.032 16.9632 195.885 18.0162 195.246 18.777L194.079 20.1666C193.848 20.4428 193.721 20.7906 193.721 21.1496V25.6882C193.721 26.4127 194.315 27 195.047 27H204.953C205.685 27 206.279 26.4127 206.279 25.6882V21.1496C206.279 20.7906 206.152 20.4429 205.92 20.1666L204.754 18.777C204.115 18.0162 203.967 16.9632 204.373 16.0594Z" fill="white"/>
+            <path d="M205.92 20.1666L204.754 18.777C204.115 18.0162 203.967 16.9632 204.373 16.0594L205.29 14.015C205.564 13.4049 205.284 12.691 204.666 12.4226C204.319 12.2716 203.938 12.294 203.624 12.4516C204.199 12.7396 204.451 13.4257 204.186 14.015L203.269 16.0595C202.864 16.9633 203.011 18.0163 203.65 18.7771L204.816 20.1667C205.048 20.4429 205.175 20.7906 205.175 21.1496V25.6883C205.175 26.4127 204.581 27 203.849 27L204.953 27C205.685 27 206.279 26.4127 206.279 25.6882V21.1496C206.279 20.7906 206.152 20.4429 205.92 20.1666Z" fill="white"/>
+            <path d="M203.248 12.3644L202.704 13.5768C202.409 14.2357 202.711 15.0067 203.378 15.2966C204.042 15.5849 204.817 15.2881 205.111 14.6326L205.657 13.4156C205.796 13.1054 205.654 12.7425 205.34 12.6061L204.064 12.0519C203.751 11.9162 203.387 12.0559 203.248 12.3644Z" fill="white"/>
+            <path d="M196.751 12.3644L197.295 13.5767C197.591 14.2357 197.289 15.0067 196.621 15.2966C195.958 15.5849 195.183 15.288 194.889 14.6326L194.343 13.4156C194.204 13.1054 194.346 12.7425 194.66 12.606L195.936 12.0519C196.248 11.9161 196.613 12.0559 196.751 12.3644Z" fill="white"/>
+            <path d="M205.367 21.0095V21.8426C205.367 21.9625 205.465 22.0597 205.587 22.0597H206.78C206.902 22.0597 207 21.9625 207 21.8426V21.0095C207 20.8897 206.902 20.7924 206.78 20.7924H205.587C205.465 20.7924 205.367 20.8897 205.367 21.0095Z" fill="white"/>
+            <path d="M193 21.0095V21.8426C193 21.9625 193.098 22.0597 193.22 22.0597H194.413C194.535 22.0597 194.633 21.9625 194.633 21.8426V21.0095C194.633 20.8897 194.535 20.7924 194.413 20.7924H193.22C193.098 20.7924 193 20.8897 193 21.0095Z" fill="white"/>
+            <path d="M205.367 23.7622V24.5953C205.367 24.7152 205.465 24.8124 205.587 24.8124H206.78C206.902 24.8124 207 24.7152 207 24.5953V23.7622C207 23.6423 206.902 23.5451 206.78 23.5451H205.587C205.465 23.5451 205.367 23.6423 205.367 23.7622Z" fill="white"/>
+            <path d="M193 23.7622V24.5953C193 24.7152 193.098 24.8124 193.22 24.8124H194.413C194.535 24.8124 194.633 24.7152 194.633 24.5953V23.7622C194.633 23.6423 194.535 23.5451 194.413 23.5451H193.22C193.098 23.5451 193 23.6423 193 23.7622Z" fill="white"/>
+            <path d="M203.181 22.0597H196.819C196.717 22.0597 196.634 21.9777 196.634 21.8767V20.9755C196.634 20.8744 196.717 20.7924 196.819 20.7924H203.181C203.283 20.7924 203.366 20.8744 203.366 20.9755V21.8767C203.366 21.9777 203.283 22.0597 203.181 22.0597Z" fill="white"/>
+            <path d="M203.181 24.8124H196.819C196.717 24.8124 196.634 24.7304 196.634 24.6293V23.7281C196.634 23.627 196.717 23.5451 196.819 23.5451H203.181C203.283 23.5451 203.366 23.627 203.366 23.7281V24.6293C203.366 24.7304 203.283 24.8124 203.181 24.8124Z" fill="white"/>
+            <path d="M200 19.2042C199.936 19.2042 199.871 19.193 199.81 19.1706L197.737 18.414C197.452 18.3101 197.306 17.9977 197.411 17.7162C197.517 17.4347 197.833 17.2908 198.117 17.3947L200 18.0819L201.883 17.3947C202.167 17.2908 202.483 17.4348 202.588 17.7163C202.693 17.9977 202.548 18.3102 202.263 18.414L200.19 19.1706C200.129 19.193 200.064 19.2042 200 19.2042Z" fill="white"/>
+            </svg>
+    </div>
+
+</div>
+
+<script src="./assets/data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="./vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+@import url("http://fonts.cdnfonts.com/css/akrobat");
+
+body {
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --scrolbar: #eac43d;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+  display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1f232b;
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scrolbar);
+  border-radius: 1px;
+  box-shadow: 0px 0px 4px #1900ff;
+}
+
+#app {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // background-image: url("../img/background2.svg");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center center;
+}
+
+.status {
+  position: absolute;
+  width: 13.75rem;
+  height: 2.5rem;
+  left: 20.25rem;
+  top: 62.5625rem;
+  > svg {
+    > path {
+      transition: 0.42s all;
+    }
+  }
+}
+
+.notification {
+  position: relative;
+  width: 31rem;
+  height: 3.5rem;
+  left: 44.5rem;
+  margin-top: 5rem;
+  top: -3rem;
+}
+
+.speedometer {
+  position: absolute;
+  width: 16.2194rem;
+  height: 16.2194rem;
+  left: 100.6506rem;
+  top: 50.4375rem;
+}
+
+
+html {
+  font-size: 16.0px;
+}
+
+@media screen and (width: 4096px) and (height: 2160px) {
+  html {
+    font-size: 31px;
+  }
+}
+
+@media screen and (width: 2560px) and (height: 1440px) {
+  html {
+    font-size: 21.3px;
+  }
+}
+
+@media screen and (width: 3440px) and (height: 1440px) {
+  html {
+    font-size: 21.9px;
+  }
+  .line {
+    .right {
+      left: 73%;
+    }
+  }
+}
+
+@media screen and (width: 1920px) and (height: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (width: 1920px) and (height: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (width: 1920px) and (height: 1440px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (width: 1440px) and (height: 900px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media screen and (width: 1680px) and (height: 1050px) {
+  html {
+    font-size: 14.0px;
+  }
+}
+
+@media screen and (width: 1600px) and (height: 900px) {
+  html {
+    font-size: 13.3px;
+  }
+}
+
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 13.3px;
+  }
+}
+
+@media screen and (width: 1768px) and (height: 992px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (width: 1366px) and (height: 768px) {
+  html {
+    font-size: 11.3px;
+  }
+}
+@media screen and (width: 1400px) and (height: 1050px) {
+  html {
+    font-size: 11.7px;
+  }
+}
+@media screen and (width: 1280px) and (height: 1024px) {
+  html {
+    font-size: 11.7px;
+  }
+}
+@media screen and (width: 1280px) and (height: 720px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (width: 1024px) and (height: 768px) {
+  html {
+    font-size: 10.05px;
+  }
+}
+@media screen and (width: 832px) and (height: 624px) {
+  html {
+    font-size: 8.05px;
+  }
+}
+
+@media screen and (width: 800px) and (height: 600px) {
+  html {
+    font-size: 8px;
+  }
+}
