@@ -1,14 +1,30 @@
 # ES-BasicHUD - A FiveM HUD for EYES STORE Server
 
-A simple FiveM Heads-Up Display (HUD) for the EYES STORE server, designed to enhance your gaming experience.
+Welcome to ES-BasicHUD, a feature-packed FiveM Heads-Up Display (HUD) designed to enhance your gaming experience on the EYES STORE server.
 
-![eyestore](https://github.com/raiderss/es-basichud/assets/53000629/ab8d62ec-b0cb-4e97-bee3-5a404e93989c)
+![ES-BasicHUD Preview](https://github.com/raiderss/es-basichud/assets/53000629/ab8d62ec-b0cb-4e97-bee3-5a404e93989c)
 
+## Features
+- Clean and minimalistic design.
+- Essential information at a glance.
+- Customizable elements for your preferences.
 
+## How to Install
+1. Download the latest release from the [Releases](https://github.com/raiderss/es-basichud/releases) page.
+2. Extract the files into your FiveM resources folder.
+3. Add `start es-basichud` to your `server.cfg` file.
+
+## Discord Community
+Join our Discord community for support and updates:
 [![Discord](https://img.shields.io/badge/Discord-ES%20Community-7289DA.svg)](https://discord.gg/EkwWvFS)
+
+## Tebex Store
+Browse our Tebex store for premium features and support:
 [![Tebex](https://img.shields.io/badge/Tebex-EYE%20STORE-00A2FF.svg)](https://eyestore.tebex.io/)
 
 ## Contributors
 - **_ESCKaybeden#0488_**
 - **_! Raider#0101_**
 
+## Tags
+#FiveM #Gaming #HUD #EYESSTORE #ESBasicHUD
