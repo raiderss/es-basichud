@@ -2,7 +2,9 @@
 
 Welcome to ES-BasicHUD, a feature-packed FiveM Heads-Up Display (HUD) designed to enhance your gaming experience on the EYES STORE server.
 
-![ES-BasicHUD Preview](https://github.com/raiderss/es-basichud/assets/53000629/ab8d62ec-b0cb-4e97-bee3-5a404e93989c)
+![eyestore](https://github.com/raiderss/es-basichud/assets/53000629/a7f5ce11-55f6-45b0-9bb6-2ee3e2077eaa)
+
+
 
 ## Features
 - Clean and minimalistic design.
