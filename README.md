@@ -2,6 +2,9 @@
 
 A simple FiveM Heads-Up Display (HUD) for the EYES STORE server, designed to enhance your gaming experience.
 
+![eyestore](https://github.com/raiderss/es-basichud/assets/53000629/ab8d62ec-b0cb-4e97-bee3-5a404e93989c)
+
+
 [![Discord](https://img.shields.io/badge/Discord-ES%20Community-7289DA.svg)](https://discord.gg/EkwWvFS)
 [![Tebex](https://img.shields.io/badge/Tebex-EYE%20STORE-00A2FF.svg)](https://eyestore.tebex.io/)
 
@@ -9,8 +12,3 @@ A simple FiveM Heads-Up Display (HUD) for the EYES STORE server, designed to enh
 - **_ESCKaybeden#0488_**
 - **_! Raider#0101_**
 
-
-![car](https://github.com/raiderss/es-basichud/assets/53000629/1b582abe-a965-4f84-9fc2-d887e82c494c)
-
-
-![civilian](https://github.com/raiderss/es-basichud/assets/53000629/1a7c8052-25f9-4e51-9a3b-f4dd3231ccb9)
