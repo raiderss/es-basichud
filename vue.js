@@ -5,8 +5,6 @@ const app = new Vue({
     location:{ StreetName1:'', StreetName2:''},
     notification:[],
     stats:'car', // civilian // car
-    waveInterval: null,
-    waveCounter: 0,
     hud: {
       health: {
         status: 0,
