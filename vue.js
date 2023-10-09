@@ -58,9 +58,6 @@ const app = new Vue({
           delay: 200,  
         });
     },    
-    triggerAnimation() {
-      this.$refs.animationRef.beginElement();
-    },
       position(type) {
         let translateXValue = '0rem'; 
     
