@@ -7,19 +7,6 @@ local function calculateHealth(ped)
 local function sendPlayerStats(ped)
     SendNUIMessage({ action = 'HEALTH&ARMOR', health = calculateHealth(ped), armor = GetPedArmour(ped) })
  end
-
- RegisterCommand("setvalues", function(source, args, rawCommand)
-   local percentage = tonumber(args[1])  -- Komuttan girilen yüzdelik değeri al
- 
-   if percentage and percentage >= 0 and percentage <= 100 then
-     local value = percentage * 10000  -- Yüzdeliği esx_status modülünün anlayacağı formata dönüştür
-     
-     TriggerEvent("esx_status:set", "thirst", value)
-     TriggerEvent("esx_status:set", "hunger", value)
-   else
-     print("Lütfen 0 ile 100 arasında bir değer girin!")
-   end
- end, false)
  
  Citizen.CreateThread(function()
     while true do
